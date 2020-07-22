@@ -1,7 +1,10 @@
+const fontSize = 10;
+
 let canvasMatrixRain = document.getElementById("matrix-rain");
 
 canvasFullScreen(canvasMatrixRain);
 let items = getItems();
+let numberOfColumns = getNumberOfColumns(canvasMatrixRain);
 
 function canvasFullScreen(canvasMatrixRain) {
     canvasMatrixRain.height = window.innerHeight;
@@ -11,4 +14,8 @@ function canvasFullScreen(canvasMatrixRain) {
 function getItems() {
     let input = "01";	
 	return input.split("");
+}
+
+function getNumberOfColumns(canvasMatrixRain) {
+	return canvasMatrixRain.width / fontSize;
 }
