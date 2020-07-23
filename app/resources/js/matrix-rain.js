@@ -1,12 +1,13 @@
-const fontSize = 10;
+const fontSizeConstant = 10;
+const particlesConstant = 1;
 
 let canvasMatrixRain = document.getElementById("matrix-rain");
 
-canvasFullScreen(canvasMatrixRain);
+canvasFullScreen();
 let items = getItems();
-let numberOfColumns = getNumberOfColumns(canvasMatrixRain);
+let particles = getParticles();
 
-function canvasFullScreen(canvasMatrixRain) {
+function canvasFullScreen() {
     canvasMatrixRain.height = window.innerHeight;
     canvasMatrixRain.width = window.innerWidth;
 }
@@ -16,6 +17,16 @@ function getItems() {
 	return input.split("");
 }
 
-function getNumberOfColumns(canvasMatrixRain) {
-	return canvasMatrixRain.width / fontSize;
+function getNumberOfColumns() {
+	return canvasMatrixRain.width / fontSizeConstant;
+}
+
+function getParticles() {
+	let particles = [];
+	let numberOfColumns = getNumberOfColumns();
+	for(let x = 0; x < numberOfColumns; x++) {
+		particles[x] = particlesConstant;
+	}
+	
+	return particles;
 }
