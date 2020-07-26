@@ -1,4 +1,5 @@
 const fontSizeConstant = 10;
+const fontUnitConstant = "px";
 const particlesConstant = 1;
 const canvasIdConstant = "matrix-rain";
 const canvasContextConstant = "2d";
@@ -42,7 +43,8 @@ function getParticles() {
 }
 
 function designCssMatrixRain() {
-	canvasMatrixRainContext.fillStyle = canvasBackgroundColorConstant;
-	canvasMatrixRainContext.fillRect(0, 0, window.innerWidth, window.innerHeight);
+	canvasMatrixRainContext.font = fontSizeConstant + fontUnitConstant;
+	canvasMatrixRainContext.fillStyle = canvasBackgroundColorConstant;	
+	canvasMatrixRainContext.fillRect(0, 0, window.innerWidth, window.innerHeight);	
 	canvasMatrixRainContext.fillStyle = canvasTextColorConstant;
 }
