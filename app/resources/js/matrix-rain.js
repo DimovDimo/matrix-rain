@@ -13,9 +13,9 @@ canvasFullScreen();
 let items = getItems();
 let particles = getParticles();
 
-function matrixRain()
-{
+function matrixRain() {
 	designCssMatrixRain();
+	fillCanvasMatrixRain();
 }
 
 function canvasFullScreen() {
@@ -47,4 +47,20 @@ function designCssMatrixRain() {
 	canvasMatrixRainContext.fillStyle = canvasBackgroundColorConstant;	
 	canvasMatrixRainContext.fillRect(0, 0, window.innerWidth, window.innerHeight);	
 	canvasMatrixRainContext.fillStyle = canvasTextColorConstant;
+}
+
+function fillCanvasMatrixRain() {
+	for(let index = 0; index < particles.length; index++)
+	{
+		let randomItem = getRandomItem();
+	}
+}
+
+function getRandomItem() {
+	return items[getRandomItemsIndex()];
+}
+
+function getRandomItemsIndex() {
+	let randomIndex = Math.random() * items.length;
+	return Math.floor(randomIndex);
 }
