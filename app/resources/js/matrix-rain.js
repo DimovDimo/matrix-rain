@@ -64,3 +64,7 @@ function getRandomItemsIndex() {
 	let randomIndex = Math.random() * items.length;
 	return Math.floor(randomIndex);
 }
+
+function getCanvasTextSize(index) {
+	return fontSizeConstant * index;
+}
