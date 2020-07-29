@@ -53,6 +53,7 @@ function fillCanvasMatrixRain() {
 	for(let index = 0; index < particles.length; index++)
 	{
 		let randomItem = getRandomItem();
+		canvasMatrixRainContext.fillText(randomItem, getCanvasTextSize(index), getParticlesSize(index));
 	}
 }
 
@@ -67,4 +68,8 @@ function getRandomItemsIndex() {
 
 function getCanvasTextSize(index) {
 	return fontSizeConstant * index;
+}
+
+function getParticlesSize(index) {
+	return fontSizeConstant * particles[index];
 }
