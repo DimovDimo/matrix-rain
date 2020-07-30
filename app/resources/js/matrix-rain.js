@@ -73,3 +73,7 @@ function getCanvasTextSize(index) {
 function getParticlesSize(index) {
 	return fontSizeConstant * particles[index];
 }
+
+function isOutOfMatrix(index) {
+	return canvasMatrixRain.height < getParticlesSize(index);
+}
