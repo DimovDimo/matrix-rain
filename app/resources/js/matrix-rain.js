@@ -5,6 +5,7 @@ const canvasIdConstant = "matrix-rain";
 const canvasContextConstant = "2d";
 const canvasBackgroundColorConstant = "rgba(0, 0, 0, 0.1)";
 const canvasTextColorConstant = "#0F0";
+const randomFullMatrixConstant = 0.98;
 
 let canvasMatrixRain = document.getElementById(canvasIdConstant);
 let canvasMatrixRainContext = canvasMatrixRain.getContext(canvasContextConstant);
@@ -76,4 +77,8 @@ function getParticlesSize(index) {
 
 function isOutOfMatrix(index) {
 	return canvasMatrixRain.height < getParticlesSize(index);
+}
+
+function randomFullMatrix() {
+	return randomFullMatrixConstant < Math.random();
 }
