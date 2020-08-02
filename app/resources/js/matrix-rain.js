@@ -7,6 +7,7 @@ const canvasBackgroundColorConstant = "rgba(0, 0, 0, 0.1)";
 const canvasTextColorConstant = "#0F0";
 const randomFullMatrixConstant = 0.98;
 const isUseOutOfMatrixConstant = true;
+const isUseWaveMatrixConstant = true;
 
 let canvasMatrixRain = document.getElementById(canvasIdConstant);
 let canvasMatrixRainContext = canvasMatrixRain.getContext(canvasContextConstant);
@@ -56,6 +57,7 @@ function fillCanvasMatrixRain() {
 		let randomItem = getRandomItem();
 		canvasMatrixRainContext.fillText(randomItem, getCanvasTextSize(index), getParticlesSize(index));
 		outOfMatrix(particles, index);
+		waveMatrix(particles, index);
 	}
 }
 
@@ -84,12 +86,18 @@ function randomFullMatrix() {
 	return randomFullMatrixConstant < Math.random();
 }
 
+function zeroParticle(particles, index) {
+	particles[index] = 0;
+}
+
 function outOfMatrix(particles, index) {
 	if(isUseOutOfMatrixConstant && isOutOfMatrix(index)) {
 		zeroParticle(particles, index)
 	}
 }
 
-function zeroParticle(particles, index) {
-	particles[index] = 0;
+function waveMatrix(particles, index) {
+	if(isUseWaveMatrixConstant && randomFullMatrix()) {
+		zeroParticle(particles, index)
+	}
 }
