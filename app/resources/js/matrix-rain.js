@@ -55,8 +55,7 @@ function designCssMatrixRain() {
 
 function fillCanvasMatrixRain() {
 	for(let index = 0; index < particles.length; index++) {
-		let randomItem = getRandomItem();
-		canvasMatrixRainContext.fillText(randomItem, getCanvasTextSize(index), getParticlesSize(index));
+		matrixFillText(index);
 		outOfMatrix(particles, index);
 		waveMatrix(particles, index);
 		growthParticle(particles, index);
@@ -106,4 +105,12 @@ function waveMatrix(particles, index) {
 
 function growthParticle(particles, index) {
 	particles[index] = particles[index] + growthParticleConstant;
+}
+
+function matrixFillText(index) {
+	let randomItem = getRandomItem();
+	let canvasTextSize = getCanvasTextSize(index);
+	let particlesSize = getParticlesSize(index);
+	
+	canvasMatrixRainContext.fillText(randomItem, canvasTextSize, particlesSize);
 }
