@@ -9,6 +9,7 @@ const randomFullMatrixConstant = 0.98;
 const isUseOutOfMatrixConstant = true;
 const isUseWaveMatrixConstant = true;
 const growthParticleConstant = 1;
+const speedTimeDelay = 50; // milliseconds
 
 let canvasMatrixRain = document.getElementById(canvasIdConstant);
 let canvasMatrixRainContext = canvasMatrixRain.getContext(canvasContextConstant);
@@ -21,6 +22,8 @@ function matrixRain() {
 	designCssMatrixRain();
 	fillCanvasMatrixRain();
 }
+
+setInterval(matrixRain, speedTimeDelay);
 
 function canvasFullScreen() {
     canvasMatrixRain.width = window.innerWidth;
