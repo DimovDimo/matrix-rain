@@ -1,15 +1,18 @@
-const fontSizeConstant = 10;
-const fontUnitConstant = "px";
-const particlesConstant = 1;
 const canvasIdConstant = "matrix-rain";
+const inputConstant = "01";
+const inputSplitConstant = "";
+const fontUnitConstant = "px";
 const canvasContextConstant = "2d";
 const canvasBackgroundColorConstant = "rgba(0, 0, 0, 0.1)";
 const canvasTextColorConstant = "#0F0";
+
 const randomFullMatrixConstant = 0.98;
+const particlesConstant = 1;
+const fontSizeConstant = 10;
+const speedTimeDelayConstant = 50; // milliseconds
+
 const isUseOutOfMatrixConstant = true;
 const isUseWaveMatrixConstant = true;
-const growthParticleConstant = 1;
-const speedTimeDelay = 50; // milliseconds
 
 let canvasMatrixRain = document.getElementById(canvasIdConstant);
 let canvasMatrixRainContext = canvasMatrixRain.getContext(canvasContextConstant);
@@ -23,7 +26,7 @@ function matrixRain() {
 	fillCanvasMatrixRain();
 }
 
-setInterval(matrixRain, speedTimeDelay);
+setInterval(matrixRain, speedTimeDelayConstant);
 
 function canvasFullScreen() {
     canvasMatrixRain.width = window.innerWidth;
@@ -31,8 +34,7 @@ function canvasFullScreen() {
 }
 
 function getItems() {
-    let input = "01";	
-	return input.split("");
+	return inputConstant.split(inputSplitConstant);
 }
 
 function getNumberOfColumns() {
@@ -107,7 +109,7 @@ function waveMatrix(particles, index) {
 }
 
 function growthParticle(particles, index) {
-	particles[index] = particles[index] + growthParticleConstant;
+	particles[index] = particles[index] + particlesConstant;
 }
 
 function matrixFillText(index) {
